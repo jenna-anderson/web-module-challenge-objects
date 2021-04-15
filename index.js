@@ -224,11 +224,11 @@ function carMaker(odometerValue) {
       }
 
     }
-    car.drive(100);
     return car;
 }
 
-console.log(carMaker(10));
+let newCar = carMaker(10);
+console.log(newCar.drive(100));
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
