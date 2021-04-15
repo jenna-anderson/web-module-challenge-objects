@@ -226,8 +226,6 @@ function carMaker(odometerValue) {
     }
     car.drive(100);
     return car;
-  //   console.log(car);
-  // return car.drive(100);
 }
 
 console.log(carMaker(10));
