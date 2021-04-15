@@ -161,13 +161,13 @@ Use the getReviewsByRating function below to do the following:
  function getReviewByRating(reviewArray, rating) {
    let ratingRange = [];
     for(let i = 0; i < reviewArray.length; i++){
-      if(reviewArray[i].rating >= rating && reviewArray[i].rating < (rating + 1)){
+      if(reviewArray[i].rating >= Math.floor(rating) && reviewArray[i].rating < (Math.ceil(rating+.01))){
         ratingRange.push(reviewArray[i]);
       }
     }
     return ratingRange;
   }
-console.log(getReviewByRating(reviews, 4));
+console.log(getReviewByRating(reviews, 4.99));
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
@@ -214,10 +214,23 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
+
+function carMaker(odometerValue) {
+    let car = {
+      odometer: odometerValue,
+      drive: function(distance){
+        car.odometer += distance;
+        return car.odometer;
+      }
+
+    }
+    car.drive(100);
+    return car;
+  //   console.log(car);
+  // return car.drive(100);
 }
+
+console.log(carMaker(10));
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
